@@ -31,6 +31,7 @@ print("The coefficient and intercept are:",regr.coef_,regr.intercept_)
 #let's plot the fit line over the train data
 plt.scatter(train.ENGINESIZE,train.CO2EMISSIONS,color='blue')
 plt.plot(train_x,regr.coef_[0][0]*train_x+regr.intercept_[0],color='red')
+plt.title('Simple Linear Regression')
 plt.xlabel('ENGINESIZE')
 plt.ylabel('CO2EMISSIONS')
 plt.show()
@@ -43,3 +44,8 @@ y_pred=regr.predict(test_x)
 print("Mean absolute error: %.2f" % np.mean(np.absolute(y_pred- test_y)))
 print("Residual sum of squares (MSE): %.2f" % np.mean((y_pred - test_y) ** 2))
 print("R2-score: %.2f" % r2_score(test_y , y_pred) )
+
+print('\n\n')
+print('The Evaluation of Multiple Linear Regression Model with CO2EMISSIONS,CYLINDERS and FUELCONSUMPTION_COMB is: ')
+import MultipleLinearReg
+
